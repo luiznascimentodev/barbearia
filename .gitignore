@@ -1,0 +1,111 @@
+# Arquivos de configuração com dados sensíveis
+config/config.php
+
+# Logs
+*.log
+logs/
+*.out
+
+# Cache do PHP
+cache/
+tmp/
+
+# Arquivos do sistema operacional
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (caso use algum build tool)
+node_modules/
+npm-debug.log*
+
+# Composer
+vendor/
+composer.phar
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Arquivos de upload (se houver)
+uploads/
+public/uploads/
+
+# Backup files
+*.bak
+*.backup
+*.sql.backup
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Vim
+*.swp
+*.swo
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# PhpStorm
+.idea/
+
+# VS Code
+.vscode/
+
+# Arquivos temporários
+temp/
+temporary/
+
+# Pasta de sessões PHP (se houver)
+sessions/

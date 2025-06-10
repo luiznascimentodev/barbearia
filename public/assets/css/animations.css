@@ -1,0 +1,246 @@
+/**
+ * Animações avançadas para o sistema da Barbearia Pro
+ * Versão 2.0 - Atualizada em 06/06/2025
+ */
+
+/* Classe para aninhar animações */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes pulse-circle {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.6);
+  }
+}
+
+/* Adiciona efeito de curva às seções */
+.curved-section {
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+}
+
+.curved-card {
+  clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+/* Animação adicional para pulsação em dourado */
+@keyframes pulse-gold {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+/* Efeito de gradiente em movimento */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Efeito de brilho em texto */
+@keyframes text-shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Animações adicionais avançadas */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Classes para utilizar as animações */
+.fade-in {
+  animation-name: fade-in;
+}
+.fade-in-up {
+  animation-name: fade-in-up;
+}
+.fade-in-left {
+  animation-name: fade-in-left;
+}
+.fade-in-right {
+  animation-name: fade-in-right;
+}
+.scale-in {
+  animation-name: scale-in;
+}
+
+/* Atrasos para animações */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+.delay-700 {
+  animation-delay: 0.7s;
+}
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+/* Duração das animações */
+.duration-300 {
+  animation-duration: 0.3s;
+}
+.duration-500 {
+  animation-duration: 0.5s;
+}
+.duration-700 {
+  animation-duration: 0.7s;
+}
+.duration-1000 {
+  animation-duration: 1s;
+}
+.duration-1500 {
+  animation-duration: 1.5s;
+}
+
+/* Efeito de partículas flutuantes para fundos */
+.particles-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+}
+
+.particle:nth-child(odd) {
+  animation: float-particle 8s infinite ease-in-out;
+}
+
+.particle:nth-child(even) {
+  animation: float-particle 12s infinite ease-in-out;
+}
+
+@keyframes float-particle {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(40px, 20px);
+  }
+  50% {
+    transform: translate(20px, 40px);
+  }
+  75% {
+    transform: translate(-20px, 20px);
+  }
+}
