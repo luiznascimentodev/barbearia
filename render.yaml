@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: barbearia-agendamento
+    env: docker
+    dockerfilePath: ./Dockerfile.prod
+    region: oregon
+    plan: starter
+    branch: main
+    buildCommand: ""
+    startCommand: ""
+    healthCheckPath: /
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: DB_HOST
+        fromDatabase:
+          name: barbearia-db
+          property: host
+      - key: DB_NAME
+        fromDatabase:
+          name: barbearia-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: barbearia-db
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: barbearia-db
+          property: password
+
+  - type: pserv
+    name: barbearia-db
+    env: docker
+    plan: starter
+    region: oregon
+    databaseName: barbearia_agendamento
+    databaseUser: barbearia_user
+    ipAllowList: []

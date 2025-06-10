@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # Aplicação PHP/Apache
+  app:
+    build: .
+    container_name: barbearia_app
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./docker/php.ini:/usr/local/etc/php/conf.d/custom.ini
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
+    depends_on:
+      - db
+    networks:
+      - barbearia_network
+
+  # Banco de dados MySQL
+  db:
+    image: mysql:8.0
+    container_name: barbearia_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: barbearia_agendamento
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: barbearia_user
+      MYSQL_PASSWORD: barbearia_pass
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    ports:
+      - "3306:3306"
+    networks:
+      - barbearia_network
+
+  # phpMyAdmin (opcional - apenas para desenvolvimento)
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: barbearia_phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: rootpassword
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+    networks:
+      - barbearia_network
+
+volumes:
+  db_data:
+
+networks:
+  barbearia_network:
+    driver: bridge

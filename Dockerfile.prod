@@ -1,0 +1,63 @@
+# Dockerfile otimizado para produção no Render.com
+FROM php:8.2-apache
+
+# Definir argumentos de build
+ARG ENVIRONMENT=production
+
+# Instalar dependências do sistema e extensões PHP
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libzip-dev \
+    zip \
+    unzip \
+    git \
+    curl \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd pdo pdo_mysql mysqli zip opcache \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Habilitar módulos do Apache
+RUN a2enmod rewrite headers
+
+# Configurar o DocumentRoot
+ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+
+# Copiar configuração do Apache
+COPY docker/apache.conf /etc/apache2/sites-available/000-default.conf
+
+# Definir diretório de trabalho
+WORKDIR /var/www/html
+
+# Copiar arquivos do projeto
+COPY . /var/www/html
+
+# Configuração específica para produção
+COPY docker/php.prod.ini /usr/local/etc/php/conf.d/custom.ini
+
+# Definir permissões
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html \
+    && chmod -R 644 /var/www/html/**/*.php
+
+# Criar diretórios necessários
+RUN mkdir -p /var/www/html/logs \
+    && chown -R www-data:www-data /var/www/html/logs \
+    && chmod -R 755 /var/www/html/logs
+
+# Configurar variáveis de ambiente para produção
+ENV ENVIRONMENT=production
+
+# Expor porta 80
+EXPOSE 80
+
+# Healthcheck
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost/ || exit 1
+
+# Comando para iniciar o Apache
+CMD ["apache2-foreground"]

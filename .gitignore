@@ -109,3 +109,18 @@ temporary/
 
 # Pasta de sessões PHP (se houver)
 sessions/
+
+# Docker
+.env.docker
+docker-compose.override.yml
+
+# Logs Docker
+*.log
+
+# Backups
+backups/
+
+# Certificados SSL
+*.pem
+*.key
+*.crt

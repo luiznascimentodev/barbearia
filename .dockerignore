@@ -1,0 +1,55 @@
+# Ignorar arquivos de desenvolvimento
+.git
+.gitignore
+README.md
+CONTRIBUTING.md
+DOCUMENTACAO_TECNICA.md
+
+# Ignorar arquivos de configuração local
+config/config.php
+docker-compose.yml
+.env
+.env.local
+
+# Ignorar logs e cache
+*.log
+logs/
+cache/
+tmp/
+
+# Ignorar arquivos do sistema operacional
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignorar IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignorar node_modules e dependências
+node_modules/
+vendor/
+
+# Ignorar arquivos de backup
+*.bak
+*.backup
+*.sql.backup
+
+# Ignorar arquivos temporários
+temp/
+temporary/
+
+# Ignorar arquivos de upload (para evitar uploads locais em produção)
+uploads/
+public/uploads/
+
+# Ignorar testes (se houver)
+tests/
+phpunit.xml
