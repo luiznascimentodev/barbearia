@@ -1,0 +1,337 @@
+/**
+ * Melhorias de contraste de texto para o tema escuro da Barbearia Pro
+ * Data: 06/06/2025
+ */
+
+/* Ajustes gerais de texto para melhor legibilidade */
+body {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Melhorar a legibilidade de textos secundários */
+.text-muted,
+.small,
+small,
+.text-secondary,
+.text-black-50 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Melhorar contraste em parágrafos */
+p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Clarear links e textos importantes */
+a:not(.btn):not(.nav-link):not(.dropdown-item),
+.text-primary {
+  color: var(--gold) !important;
+  text-decoration: none;
+}
+
+a:not(.btn):not(.nav-link):not(.dropdown-item):hover {
+  color: #ffdb78 !important;
+  text-decoration: underline;
+}
+
+/* Títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: white;
+}
+
+/* Garantir boa legibilidade em cards */
+.card {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card-title {
+  color: white;
+}
+
+.card-text {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Melhorar contraste nos textos de alertas e badges */
+.alert-warning {
+  color: #664d03;
+  background-color: rgba(255, 193, 7, 0.3);
+  border-color: rgba(255, 193, 7, 0.5);
+}
+
+.alert-success {
+  color: #b1ffc8;
+  background-color: rgba(25, 135, 84, 0.15);
+  border-color: rgba(25, 135, 84, 0.3);
+  border-left: 4px solid rgba(25, 135, 84, 0.8);
+}
+
+.alert-danger {
+  color: #ffb8bf;
+  background-color: rgba(220, 53, 69, 0.15);
+  border-color: rgba(220, 53, 69, 0.3);
+  border-left: 4px solid rgba(220, 53, 69, 0.8);
+}
+
+.alert-info {
+  color: #b8f0ff;
+  background-color: rgba(13, 202, 240, 0.15);
+  border-color: rgba(13, 202, 240, 0.3);
+  border-left: 4px solid rgba(13, 202, 240, 0.8);
+}
+
+.alert-warning {
+  color: #ffdb78;
+  background-color: rgba(255, 193, 7, 0.15);
+  border-color: rgba(255, 193, 7, 0.3);
+  border-left: 4px solid rgba(255, 193, 7, 0.8);
+}
+
+.badge.bg-warning {
+  color: #212529 !important;
+}
+
+/* Melhorar contraste na tabela */
+.table {
+  color: rgba(255, 255, 255, 0.9);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+/* Destacar linhas alternadas para melhor leitura */
+.table-striped > tbody > tr:nth-of-type(odd) {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Destacar hover nas linhas para interatividade */
+.table-hover > tbody > tr:hover {
+  background-color: rgba(255, 193, 7, 0.08) !important;
+}
+
+/* Ajustes específicos para cabeçalho da tabela */
+.table > thead {
+  background: linear-gradient(
+    135deg,
+    rgba(40, 40, 40, 0.9) 0%,
+    rgba(20, 20, 20, 0.9) 100%
+  ) !important;
+  color: white !important;
+}
+
+.table > thead th {
+  font-weight: 600;
+  border-bottom: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--gold) !important;
+}
+
+/* Melhorar visualização de dados nas células */
+.table > tbody td {
+  border-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem 1.25rem;
+  vertical-align: middle;
+}
+
+/* Estilos para tabelas responsivas */
+.table-responsive {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Ajuste para badges de status */
+.status-badge.bg-warning {
+  color: #212529;
+  background-color: #ffc107 !important;
+}
+
+/* Ajustar textos em tooltips e popovers */
+.tooltip-inner,
+.popover-body {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(33, 37, 41, 0.95);
+}
+
+.popover-header {
+  color: white;
+  background-color: rgba(33, 37, 41, 0.98);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Melhorar textos em conteúdo dinâmico */
+.accordion-button {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--gold);
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+/* Melhorar contraste em listas */
+.list-group-item {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Melhorar textos em componentes Bootstrap diversos */
+.breadcrumb-item.active {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--gold);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: transparent;
+}
+
+.nav-tabs .nav-link:not(.active) {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Ajustar cores do dark mode Bootstrap */
+.text-dark {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.bg-light {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Cores especiais para estatísticas */
+.stats-value {
+  color: white;
+  font-weight: 700;
+}
+
+.stats-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+/* Ajustar texto nos botões outline */
+.btn-outline-light {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline-light:hover {
+  color: #212529;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Ajuste específico para badge warning */
+.badge.text-dark {
+  color: #212529 !important;
+}
+
+/* Garantir que texto em badge pendente seja visível */
+.badge.bg-warning,
+.status-pendente {
+  color: #212529 !important;
+}
+
+/* Melhorar visualização de ícones */
+.bi {
+  font-size: 1.1em;
+  vertical-align: -0.125em;
+}
+
+/* Card com título em destaque */
+.card-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-header-gold {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* Melhorar contraste em calendários */
+.fc-day-today {
+  background-color: rgba(255, 193, 7, 0.1) !important;
+}
+
+.fc-event {
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fc-toolbar-title {
+  color: white;
+}
+
+/* Destacar elementos importantes */
+.highlight {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* Texto em cards claros */
+.bg-white,
+.bg-light {
+  color: #212529 !important;
+}
+
+/* Ajustar o texto em componentes especiais */
+.hero-content {
+  color: white;
+}
+
+.hero-subtitle-modern {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.process-step .step-number {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* Melhorar visualização de preços */
+.price {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.price-original {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Listas e detalhes */
+.details-list li {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.details-list li:before {
+  color: var(--gold);
+}

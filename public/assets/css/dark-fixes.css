@@ -1,0 +1,218 @@
+/* Estilos adicionais para solucionar problemas específicos com elementos claros */
+
+/* Corrigir seletores de data e hora nativos */
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  color-scheme: dark;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Corrigir tabelas */
+.table-light,
+.table-light > th,
+.table-light > td,
+.table > :not(caption) > * > .table-light {
+  background-color: rgba(33, 37, 41, 0.8) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Melhorias específicas para tabelas de agendamentos */
+.agendamentos-table {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(20, 20, 20, 0.5);
+}
+
+.agendamentos-table thead {
+  position: relative;
+}
+
+.agendamentos-table thead::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.agendamentos-table th {
+  border: none;
+}
+
+.agendamentos-table td {
+  vertical-align: middle;
+  padding: 1rem 0.75rem;
+}
+
+/* Destacar data e hora de agendamentos */
+.agendamentos-table .data-hora {
+  display: flex;
+  flex-direction: column;
+}
+
+.agendamentos-table .data-hora .data {
+  font-weight: 500;
+  color: white;
+}
+
+.agendamentos-table .data-hora .hora {
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+
+/* Corrigir elementos dropdown e popup */
+.dropdown-menu,
+.datepicker-dropdown,
+.bootstrap-datetimepicker-widget,
+.select2-dropdown,
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+  background-color: #1a1a1a !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Corrigir calendários e outros widgets */
+.ui-datepicker,
+.ui-widget-content,
+.datepicker-panel,
+.timepicker-panel,
+.flatpickr-calendar,
+.daterangepicker {
+  background-color: #1a1a1a !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Corrigir estilo do status dos agendamentos */
+.status-badge {
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+}
+
+.status-pendente {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #ffdf5e;
+  border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.status-confirmado {
+  background-color: rgba(25, 135, 84, 0.15);
+  color: #2dd36f;
+  border: 1px solid rgba(25, 135, 84, 0.2);
+}
+
+.status-cancelado {
+  background-color: rgba(220, 53, 69, 0.15);
+  color: #ff4f5e;
+  border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+.status-concluido {
+  background-color: rgba(13, 110, 253, 0.15);
+  color: #0d6efd;
+  border: 1px solid rgba(13, 110, 253, 0.2);
+}
+
+/* Corrigir textos em opções de agendamento */
+.horario-option,
+.servico-option,
+.barbeiro-option {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: var(--border-radius-lg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.horario-option:hover,
+.servico-option:hover,
+.barbeiro-option:hover {
+  background-color: rgba(255, 193, 7, 0.1);
+  border-color: rgba(255, 193, 7, 0.3);
+}
+
+.horario-option.selected,
+.servico-option.selected,
+.barbeiro-option.selected {
+  background-color: rgba(255, 193, 7, 0.2);
+  border-color: var(--gold);
+}
+
+.horario-option .horario-info,
+.servico-option .servico-info,
+.barbeiro-option .barbeiro-info {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.horario-option .horario-price,
+.servico-option .servico-price {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* Card e box fixes */
+.card-footer,
+.modal-footer {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Corrige visual do modal de edição de serviço no tema escuro */
+#modalEditarServico .modal-content {
+  background: rgba(30, 30, 30, 0.98) !important;
+  color: #fff !important;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+#modalEditarServico .modal-header,
+#modalEditarServico .modal-footer {
+  background: rgba(40, 40, 40, 0.98) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+#modalEditarServico .form-label,
+#modalEditarServico label,
+#modalEditarServico .form-control,
+#modalEditarServico textarea {
+  color: #fff !important;
+  background: rgba(40, 40, 40, 0.95) !important;
+}
+#modalEditarServico .form-control,
+#modalEditarServico textarea {
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+#modalEditarServico .btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--dark-color) 100%
+  );
+  color: #fff !important;
+  border: none;
+}
+#modalEditarServico .btn-secondary {
+  background: #444 !important;
+  color: #fff !important;
+  border: none;
+}
+#modalEditarServico .btn-close {
+  filter: invert(1) grayscale(1);
+}

@@ -1,0 +1,29 @@
+# Arquivos de configuração local
+config/database_local.php
+
+# Logs
+*.log
+
+# Cache
+cache/
+tmp/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependências (se usar Composer no futuro)
+vendor/
+
+# Arquivos de backup
+*.bak
+*.backup
+
+# Arquivos temporários
+*.tmp
